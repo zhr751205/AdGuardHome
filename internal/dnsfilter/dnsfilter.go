@@ -146,6 +146,8 @@ const (
 	FilteredSafeSearch
 	// FilteredBlockedService - the host is blocked by "blocked services" settings
 	FilteredBlockedService
+	// FilteredRebind - the request was blocked due to DNS rebinding protection
+	FilteredRebind
 
 	// ReasonRewrite - rewrite rule was applied
 	ReasonRewrite
@@ -165,6 +167,7 @@ var reasonNames = []string{
 	"FilteredInvalid",
 	"FilteredSafeSearch",
 	"FilteredBlockedService",
+	"FilteredRebind",
 
 	"Rewrite",
 	"RewriteEtcHosts",
