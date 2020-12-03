@@ -48,6 +48,7 @@ func (s *Server) handleDNSRequest(_ *proxy.Proxy, d *proxy.DNSContext) error {
 		processFilteringBeforeRequest,
 		processUpstream,
 		processDNSSECAfterResponse,
+		processRebindingFilteringAfterResponse,
 		processFilteringAfterResponse,
 		s.ipset.process,
 		processQueryLogsAndStats,
