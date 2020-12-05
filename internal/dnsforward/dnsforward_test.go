@@ -796,9 +796,9 @@ func TestBlockedDNSRebinding(t *testing.T) {
 	}
 
 	s.conf.RebindingProtectionEnabled = true
-	s.conf.RebindingAllowedHosts = []string{
-		"nip.io.",
-	}
+	s.rebinding, _ = newRebindChecker([]string{
+		"||nip.io^",
+	})
 	reply, err = dns.Exchange(&req, addr.String())
 	if err != nil {
 		t.Fatalf("Couldn't talk to server %s: %s", addr, err)

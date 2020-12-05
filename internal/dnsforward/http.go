@@ -315,6 +315,7 @@ func (s *Server) setConfig(dc dnsConfig) (restart bool) {
 
 	if dc.RebindingAllowedHosts != nil {
 		s.conf.RebindingAllowedHosts = *dc.RebindingAllowedHosts
+		restart = true
 	}
 	s.Unlock()
 	s.conf.ConfigModified()

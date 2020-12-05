@@ -593,5 +593,5 @@
     "rebinding_protection_enabled": "Enable protection from DNS rebinding attacks",
     "rebinding_protection_enabled_desc": "If enabled, AdGuard Home will block responses containing host on the local network.",
     "rebinding_allowed_hosts_title": "Allowed domains",
-    "rebinding_allowed_hosts_desc": "A list of domains. If configured, AdGuard Home will allow responses containing host on the local network from these domains."
+    "rebinding_allowed_hosts_desc": "A list of domains. If configured, AdGuard Home will allow responses containing host on the local network from these domains. Here you can specify the exact domain names, wildcards and urlfilter-rules, e.g. 'example.org', '*.example.org' or '||example.org^'."
 }
