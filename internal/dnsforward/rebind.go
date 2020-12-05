@@ -157,6 +157,21 @@ func processRebindingFilteringAfterResponse(ctx *dnsContext) int {
 	return resultDone
 }
 
+func (s *Server) setRebindingConfig(dc dnsConfig) bool {
+	restart := false
+
+	if dc.RebindingProtectionEnabled != nil {
+		s.conf.RebindingProtectionEnabled = *dc.RebindingProtectionEnabled
+	}
+
+	if dc.RebindingAllowedHosts != nil {
+		s.conf.RebindingAllowedHosts = *dc.RebindingAllowedHosts
+		restart = true
+	}
+
+	return restart
+}
+
 func (s *Server) preventRebindResponse(ctx *dnsContext) (*dnsfilter.Result, error) {
 	d := ctx.proxyCtx
 
