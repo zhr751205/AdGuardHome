@@ -509,6 +509,7 @@ export const FORM_NAME = {
     INSTALL: 'install',
     LOGIN: 'login',
     CACHE: 'cache',
+    REBINDING: 'rebinding',
     ...DHCP_FORM_NAMES,
 };
 
