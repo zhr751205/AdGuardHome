@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { Trans, useTranslation } from 'react-i18next';
-import { shallowEqual, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { renderTextareaField, CheckboxField } from '../../../../helpers/form';
 import { removeEmptyLines } from '../../../../helpers/helpers';
 import { FORM_NAME } from '../../../../helpers/constants';
@@ -20,7 +20,7 @@ const Form = ({
     handleSubmit, submitting, invalid,
 }) => {
     const { t } = useTranslation();
-    const { processingSetConfig } = useSelector((state) => state.dnsConfig, shallowEqual);
+    const processingSetConfig = useSelector((state) => state.dnsConfig.processingSetConfig);
 
     const renderField = ({
         id, title, subtitle, disabled = processingSetConfig, normalizeOnBlur,

@@ -17,14 +17,15 @@ const (
 	filteringStatusAll      = "all"
 	filteringStatusFiltered = "filtered" // all kinds of filtering
 
-	filteringStatusBlocked             = "blocked"              // blocked or blocked services
-	filteringStatusBlockedService      = "blocked_services"     // blocked
-	filteringStatusBlockedSafebrowsing = "blocked_safebrowsing" // blocked by safebrowsing
-	filteringStatusBlockedParental     = "blocked_parental"     // blocked by parental control
-	filteringStatusWhitelisted         = "whitelisted"          // whitelisted
-	filteringStatusRewritten           = "rewritten"            // all kinds of rewrites
-	filteringStatusSafeSearch          = "safe_search"          // enforced safe search
-	filteringStatusProcessed           = "processed"            // not blocked, not white-listed entries
+	filteringStatusBlocked             = "blocked"               // blocked or blocked services
+	filteringStatusBlockedService      = "blocked_services"      // blocked
+	filteringStatusBlockedSafebrowsing = "blocked_safebrowsing"  // blocked by safebrowsing
+	filteringStatusBlockedParental     = "blocked_parental"      // blocked by parental control
+	filteringStatusBlockedRebind       = "blocked_dns_rebinding" // blocked by DNS rebinding protection
+	filteringStatusWhitelisted         = "whitelisted"           // whitelisted
+	filteringStatusRewritten           = "rewritten"             // all kinds of rewrites
+	filteringStatusSafeSearch          = "safe_search"           // enforced safe search
+	filteringStatusProcessed           = "processed"             // not blocked, not white-listed entries
 )
 
 // filteringStatusValues -- array with all possible filteringStatus values
@@ -32,7 +33,7 @@ var filteringStatusValues = []string{
 	filteringStatusAll, filteringStatusFiltered, filteringStatusBlocked,
 	filteringStatusBlockedService, filteringStatusBlockedSafebrowsing, filteringStatusBlockedParental,
 	filteringStatusWhitelisted, filteringStatusRewritten, filteringStatusSafeSearch,
-	filteringStatusProcessed,
+	filteringStatusProcessed, filteringStatusBlockedRebind,
 }
 
 // searchCriteria - every search request may contain a list of different search criteria

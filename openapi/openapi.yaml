@@ -190,6 +190,7 @@
           - 'blocked'
           - 'blocked_safebrowsing'
           - 'blocked_parental'
+          - 'blocked_dns_rebinding'
           - 'whitelisted'
           - 'rewritten'
           - 'safe_search'

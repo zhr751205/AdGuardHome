@@ -341,6 +341,7 @@ export const FILTERED_STATUS = {
     REWRITE_HOSTS: 'RewriteEtcHosts',
     FILTERED_SAFE_SEARCH: 'FilteredSafeSearch',
     FILTERED_SAFE_BROWSING: 'FilteredSafeBrowsing',
+    FILTERED_REBIND: 'FilteredRebind',
     FILTERED_PARENTAL: 'FilteredParental',
 };
 
@@ -372,6 +373,10 @@ export const RESPONSE_FILTER = {
     BLOCKED_ADULT_WEBSITES: {
         QUERY: 'blocked_parental',
         LABEL: 'blocked_adult_websites',
+    },
+    BLOCKED_DNS_REBINDING: {
+        QUERY: 'blocked_dns_rebinding',
+        LABEL: 'blocked_dns_rebinding',
     },
     ALLOWED: {
         QUERY: 'whitelisted',
@@ -412,6 +417,10 @@ export const FILTERED_STATUS_TO_META_MAP = {
     },
     [FILTERED_STATUS.FILTERED_BLOCKED_SERVICE]: {
         LABEL: 'blocked_service',
+        COLOR: QUERY_STATUS_COLORS.RED,
+    },
+    [FILTERED_STATUS.FILTERED_REBIND]: {
+        LABEL: RESPONSE_FILTER.BLOCKED_DNS_REBINDING.LABEL,
         COLOR: QUERY_STATUS_COLORS.RED,
     },
     [FILTERED_STATUS.FILTERED_SAFE_SEARCH]: {

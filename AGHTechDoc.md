@@ -1558,6 +1558,7 @@ Strict matching can be enabled by enclosing the value in double quotes: e.g. `"a
 * blocked_services     - blocked services
 * blocked_safebrowsing - blocked by safebrowsing
 * blocked_parental     - blocked by parental control
+* blocked_dns_rebinding - blocked by DNS rebinding protection
 * whitelisted          - whitelisted
 * rewritten            - all kinds of rewrites
 * safe_search          - enforced safe search

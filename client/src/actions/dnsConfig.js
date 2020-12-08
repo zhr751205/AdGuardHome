@@ -39,6 +39,7 @@ export const setDnsConfig = (config) => async (dispatch) => {
         }
         if (Object.prototype.hasOwnProperty.call(data, 'rebinding_allowed_hosts')) {
             data.rebinding_allowed_hosts = splitByNewLine(config.rebinding_allowed_hosts);
+            hasDnsSettings = true;
         }
 
         await apiClient.setDnsConfig(data);
