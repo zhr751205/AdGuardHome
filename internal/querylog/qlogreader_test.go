@@ -114,10 +114,6 @@ func TestQLogReader_Seek(t *testing.T) {
 			timestamp, err := time.Parse(time.RFC3339Nano, tc.time)
 			assert.Nil(t, err)
 
-			if tc.name == "first" {
-				assert.True(t, true)
-			}
-
 			err = r.SeekTS(timestamp.UnixNano())
 			assert.True(t, errors.Is(err, tc.want))
 		})
