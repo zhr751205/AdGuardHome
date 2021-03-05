@@ -659,7 +659,9 @@ func (clients *clientsContainer) addFromHostsFile() {
 	n := 0
 	for ip, names := range hosts {
 		for _, name := range names {
-			ok := clients.addHostLocked(ip, name, ClientSourceHostsFile)
+			host := sanitizeHost(name)
+
+			ok := clients.addHostLocked(ip, host, ClientSourceHostsFile)
 			if ok {
 				n++
 			}
@@ -702,6 +704,7 @@ func (clients *clientsContainer) addFromSystemARP() {
 
 		host := ln[:open]
 		ip := ln[open+2 : close]
+		host = sanitizeHost(host)
 		if utils.IsValidHostname(host) != nil || net.ParseIP(ip) == nil {
 			continue
 		}
@@ -730,7 +733,7 @@ func (clients *clientsContainer) addFromDHCP() {
 	leases := clients.dhcpServer.Leases(dhcpd.LeasesAll)
 	n := 0
 	for _, l := range leases {
-		if l.Hostname == "" {
+		if l.Hostname = sanitizeHost(l.Hostname); l.Hostname == "" {
 			continue
 		}
 
